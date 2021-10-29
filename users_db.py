@@ -7,7 +7,7 @@ from sqlite3 import Error
 
 
 def ConnectDB():
-    way = 'C:\\Users\\Cliente\\Desktop\\DEV\\Python_Senai_Projeto\\programa-empresarial\\users.db'
+    way = 'C:\\Users\\Cliente\\Desktop\\DEV\\Python_Senai_Projeto\\programa-empresarial\\work.db'
     con=None
     try:
         con=sqlite3.connect(way)
@@ -25,9 +25,32 @@ def insert(connection, sql):
         c= connection.cursor()
         c.execute(sql)
         connection.commit()
-        print('Registro inserido')
+        print('Registro Inserido com SUCESSO')
 
     except Error as ex:
         print(ex)
 
 #insert(vcon, vsql)
+def fill(connection, sql):
+    try:
+        c= connection.cursor()
+        c.execute(sql)
+        connection.commit()
+        res=c.fetchall()
+        vcon.close()
+        print('Registros Obtidos com SUCESSO')
+    except Error as ex:
+        print(ex)
+    return res
+
+
+def delete(connection, sql):
+    try:
+        c= connection.cursor()
+        c.execute(sql)
+        connection.commit()
+        
+        vcon.close()
+        print('Registro Removido com SUCESSO')
+    except Error as ex:
+        print(ex)

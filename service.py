@@ -37,13 +37,6 @@ def services():
         vid.focus()
 
 
-    def delete():
-        try:
-            itemSelection = app.selection()[0]
-            app.delete(itemSelection)
-        except:
-            messagebox.showinfo(title="ERRO", message="Selecione um Serviço para deletá-lo") 
-
     def get():
         try:
             itemSelection = app.selection()[0]
@@ -58,16 +51,43 @@ def services():
             messagebox.showinfo(title="ERRO", message="Selecione um Serviço a ser mostrado") 
 
 
+    def banco_fill():
+        app.delete(*app.get_children())
+        vquery="SELECT * FROM tb_users order by N_OS"
+        vcon = users_db.ConnectDB()
+        linhas=users_db.fill(vcon,vquery)
+        for i in linhas:
+            app.insert("","end",values=i)
+
+
+    def banco_delete():
+        itemSelection = app.selection()[0]
+        valores=app.item(itemSelection, "values")
+        id=valores[0]
+        vcon = users_db.ConnectDB()
+        try:
+            vquery="DELETE FROM tb_users WHERE N_OS="+id
+            users_db.delete(vcon,vquery)
+        except:
+            messagebox.showinfo(title='ERRO', message="Erro ao deletar")
+            return
+        app.delete(itemSelection)
+
+
 
     def banco():
 
-
+        iD = vid.get()
         name = vname.get()
         mail = vmail.get()
         status = vstatus.get()
-        vsql =   "INSERT INTO tb_users (T_USERNAME, T_USEREMAIL, T_USERSTATUS) VALUES('"+name+"','"+mail+"','"+status+"')"
+        vsql =   "INSERT INTO tb_users (N_OS, T_A_USERNAME, T_B_USERSTATUS, T_C_USEREMAIL) VALUES('"+iD+"','"+name+"','"+status+"','"+mail+"')"
         vcon = users_db.ConnectDB()
         users_db.insert(vcon, vsql)
+
+    
+
+
         
     
 
@@ -81,6 +101,7 @@ def services():
     app.heading('status', text='STATUS')
     app.heading('email', text='EMAIL')
     app.grid(column=1,row=5,columnspan=4,pady=5)
+    banco_fill()
     #nome do cliente
     #serviço prestado/ordem de serviço
     #email do cliente
@@ -116,7 +137,7 @@ def services():
     btn_insert.grid(column=1, row=6, pady=10)
 
 
-    btn_delete = Button(form, text='Deletar', command=delete)
+    btn_delete = Button(form, text='Deletar', command=banco_delete)
     btn_delete.grid(column=2, row=6, pady=10)
 
 
