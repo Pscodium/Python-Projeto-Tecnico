@@ -2,10 +2,7 @@
 import sqlite3
 from sqlite3 import Error
 
-
-# conexão com o banco de dados
-
-
+############ FUNÇÃO QUE FAZ A CONEXÃO COM O BANCO DE DADOS ############
 def ConnectDB():
     way = 'C:\\Users\\Cliente\\Desktop\\DEV\\Python_Senai_Projeto\\programa-empresarial\\work.db'
     con=None
@@ -18,8 +15,8 @@ def ConnectDB():
 
 vcon = ConnectDB()
 
-#vsql = "INSERT INTO tb_users (T_USERNAME, T_USEREMAIL, T_USERSTATUS) VALUES('"++"','"++"','"++"')"
 
+############ FUNÇÃO QUE INSERE INFORMAÇÕES AO BANCO DE DADOS ############
 def insert(connection, sql):
     try:
         c= connection.cursor()
@@ -30,7 +27,7 @@ def insert(connection, sql):
     except Error as ex:
         print(ex)
 
-#insert(vcon, vsql)
+############ FUNÇÃO QUE LINKA A TABELA AO BANCO DE DADOS ############
 def fill(connection, sql):
     try:
         c= connection.cursor()
@@ -43,7 +40,7 @@ def fill(connection, sql):
         print(ex)
     return res
 
-
+############ FUNÇÃO QUE DELETA INFORMAÇÕES DA DATABASE ############
 def delete(connection, sql):
     try:
         c= connection.cursor()
