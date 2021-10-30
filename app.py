@@ -14,6 +14,7 @@ window = tk.Tk()
 window.title('Janela')
 window.geometry('300x200')
 window.configure(bg=color1)
+window.resizable(False, False) 
 
 
 ############ QUANDO VOCÊ ESCREVER O USER E SENHA CORRETOS, ESTA FUNÇÃO VAI DESTRUIR A JANELA DE LOGIN E ABRIR A TABLE DE SERVIÇOS ############

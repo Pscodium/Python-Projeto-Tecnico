@@ -35,7 +35,7 @@ def fill(connection, sql):
         connection.commit()
         res=c.fetchall()
         vcon.close()
-        print('Registros Obtidos com SUCESSO')
+        print('Registros Atualizados com SUCESSO')
     except Error as ex:
         print(ex)
     return res
