@@ -2,15 +2,21 @@ import tkinter as tk
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
-from sqlite3 import Error
 import users_db
 import send_email
+from sqlite3 import Error
 
 ############ CORES ############
 color1 = '#ffffff' #branco 
 color2 = '#000000' #preto
 color3 = '#cecece' #cinza claro para text box
 color4 = '#575757' #cinza
+colorb = '#feb236'  #amarelo Buttons
+colorfundo = '#6b5b95' #Roxo fundo
+colorentry = '#dbdad5'
+fgtext= 'White'
+colortable = '#E6E6FA'
+
 
 combolist = ['Aguardando','Em Processo','Finalizado'] # LISTA DE FUNÇÕES DA COMBOBOX
 
@@ -21,10 +27,9 @@ def services():
     form = Tk()
     form.title('Tabela de Serviços')
     form.geometry('1000x600')
-    form.configure(bg=color1)
+    form.configure(bg=colorfundo)
     form.resizable(False, False) 
-    #SALVA SAPORRA
-
+  
 
     def info():
         try:
@@ -33,34 +38,34 @@ def services():
             wininfo = Tk()
             wininfo.title('Adicione a Descrição')
             wininfo.geometry('300x450')
-            wininfo.configure(bg=color1)
+            wininfo.configure(bg=colorfundo)
             wininfo.resizable(False, False) 
 
-            lbclient = Label(wininfo,text="Cliente")
-            lbclient.grid(row=3, column=1)
-            eclient = Label(wininfo,text="", bg=color1)
-            eclient.grid(row=4, column=1)
+            lbclient = Label(wininfo,text="Cliente", bg=colorb)
+            lbclient.place(relx=0.3,y=10)
+            eclient = Label(wininfo,text="", bg=colorfundo, fg=fgtext)
+            eclient.place(relx=0.3,y=30)
 
-            lbos = Label(wininfo,text="OS")
-            lbos.grid(row=5, column=1)
-            eos = Label(wininfo,text="", bg=color1)
-            eos.grid(row=6, column=1)
+            lbos = Label(wininfo,text="OS", bg=colorb)
+            lbos.place(relx=0.3,y=80)
+            eos = Label(wininfo,text="", bg=colorfundo, fg=fgtext)
+            eos.place(relx=0.3,y=100)
 
 
-            lbstatus = Label(wininfo,text="Status")
-            lbstatus.grid(row=7, column=1)
-            estatus = Label(wininfo,text="", bg=color1)
-            estatus.grid(row=8, column=1)
+            lbstatus = Label(wininfo,text="Status", bg=colorb)
+            lbstatus.place(relx=0.3,y=150)
+            estatus = Label(wininfo,text="", bg=colorfundo, fg=fgtext)
+            estatus.place(relx=0.3,y=170)
             
-            lbemail = Label(wininfo,text="E-mail")
-            lbemail.grid(row=9, column=1)
-            eemail = Label(wininfo,text="", bg=color1)
-            eemail.grid(row=10, column=1)
+            lbemail = Label(wininfo,text="E-mail", bg=colorb)
+            lbemail.place(relx=0.3,y=220)
+            eemail = Label(wininfo,text="", bg=colorfundo, fg=fgtext)
+            eemail.place(relx=0.3,y=240)
 
-            lbdisc = Label(wininfo,text="Descrição")
-            lbdisc.grid(row=11, column=1)
-            edisc = Label(wininfo,text="", bg=color1)
-            edisc.grid(row=12, column=1)
+            lbdisc = Label(wininfo,text="Descrição", bg=colorb)
+            lbdisc.place(relx=0.3, y=290)
+            edisc = Label(wininfo,text="", bg=colorfundo, fg=fgtext)
+            edisc.place(relx=0.3, y=310)
 
 
             eclient['text'] = valores[1]
@@ -95,13 +100,13 @@ def services():
             try:
                 itemSelection = app.selection()[0]
                 valores=app.item(itemSelection, "values")
-                id=valores[0]
+                iD=valores[0]
                 name=valores[1]
                 mail=valores[3]
                 comboedit = vedit.get()               
-                send_email.email_send(id, name, comboedit, mail)
+                send_email.email_send(iD, name, comboedit, mail)
                 vcon = users_db.ConnectDB()
-                vquery = "UPDATE tb_users SET T_B_USERSTATUS='"+comboedit+"' WHERE N_OS="+id
+                vquery = "UPDATE tb_users SET T_B_USERSTATUS='"+comboedit+"' WHERE N_OS="+iD
                 users_db.insert(vcon, vquery)
                 winedit.destroy()
                 
@@ -112,26 +117,26 @@ def services():
         winedit = Tk()
         winedit.title('Edite o Status')
         winedit.geometry('220x200')
-        winedit.configure(bg=color1)
+        winedit.configure(bg=colorfundo)
         winedit.resizable(False, False) 
-        lbedit = Label(winedit,text="Status")
+        lbedit = Label(winedit,text="Status",fg=fgtext, bg=colorfundo)
         vedit = ttk.Combobox(winedit, values=combolist, width=15,justify='center')
         lbedit.place(x=53, y=60)
         vedit.place(x=53, y=80)
 
-        btn_edit = Button(winedit, text='Editar', command=place)
+        btn_edit = Button(winedit, text='Editar', command=place, bg=colorb)
         btn_edit.place(x=53, y=110)
 
     ############ ADICIONA DESCRIÇÃO AO SERVIÇO SELECIONADO ############
     def description():
         def place_desc():
             try:
-                desc = vdesc.get("1.0","end")
                 itemSelection = app.selection()[0]
+                desc = vdesc.get("1.0","end")
                 valores=app.item(itemSelection, "values")
-                id=valores[0]
+                iD=valores[0]
                 vcon = users_db.ConnectDB()
-                vquery = "UPDATE tb_users SET T_D_DESCRIPTION='"+desc+"' WHERE N_OS="+id
+                vquery = "UPDATE tb_users SET T_D_DESCRIPTION='"+desc+"' WHERE N_OS="+iD
                 users_db.insert(vcon, vquery)
                 windesc.destroy()
             except:
@@ -141,13 +146,13 @@ def services():
         windesc.title('Adicione a Descrição')
         windesc.geometry('450x300')
         windesc.resizable(False, False)  
-        windesc.configure(bg=color1)
-        lbdesc = Label(windesc,text="Descrição")
-        vdesc = Text(windesc, width=40, height=5, bg=color3)
+        windesc.configure(bg=colorfundo)
+        lbdesc = Label(windesc,text="Descrição",fg=fgtext, bg=colorfundo)
+        vdesc = Text(windesc, width=40, height=5, bg=colorentry)
         lbdesc.place(x=53, y=60)
         vdesc.place(x=53, y=80)
 
-        btn_desc = Button(windesc, text='Adicionar', command=place_desc)
+        btn_desc = Button(windesc, text='Adicionar', command=place_desc, bg=colorb)
         btn_desc.place(x=53, y=190)
 
 
@@ -211,54 +216,59 @@ def services():
 
 
     ############ TEXTO E ENTRADA DA ORDEM DE SERVIÇO ############
-    lbid = Label(form,text="OS")
-    vid = Entry(form, width=10,justify='center')
+    lbid = Label(form,text="OS", bg=colorfundo, fg= fgtext)
+    vid = Entry(form, width=10,justify='center', bg=colorentry)
     vid.place(x=100, y=430)
     lbid.place(x=100, y=410)
     
     ############ TEXTO E ENTRADA DO NOME DO CLIENTE ############
-    lbname = Label(form,text="Cliente")
-    vname = Entry(form, width=30,justify='center')
+    lbname = Label(form,text="Cliente", bg=colorfundo, fg= fgtext)
+    vname = Entry(form, width=30,justify='center',bg=colorentry)
     vname.place(x=190, y=430)
     lbname.place(x=190, y=410)
 
+    style= ttk.Style()
+    style.theme_use('clam')
+    style.configure("TCombobox", fieldbackground= colorentry, background= fgtext)
+
     ############ TEXTO E COMBOBOX DO STATUS DO SERVIÇO ############
-    lbstatus = Label(form,text="Status")
+    lbstatus = Label(form,text="Status", bg=colorfundo, fg= fgtext)
     vstatus = ttk.Combobox(form, values=combolist, width=15,justify='center')
+    vstatus['background'] = colorentry
     vstatus.place(x=400, y=430)
     lbstatus.place(x=400, y=410)
 
     ############ TEXTO E ENTRADA DO EMAIL DO CLIENTE ############
-    lbmail = Label(form,text="E-mail")
-    vmail = Entry(form, width=40,justify='center')
+    lbmail = Label(form,text="E-mail", bg=colorfundo, fg=fgtext)
+    vmail = Entry(form, width=40,justify='center', bg=colorentry)
     vmail.place(x=540, y=430)
     lbmail.place(x=540, y=410)
 
 
 
     ############ BOTÃO INSERIR ############
-    btn_insert = Button(form, text='Add', command=insert,width=4)
+    btn_insert = Button(form, text='Add', command=insert,width=4, bg =colorb)
     btn_insert.place(x=800,y=430)
 
     ############ BOTÃO DELETE ############
-    btn_delete = Button(form, text='Del', command=banco_delete,width=4)
+    btn_delete = Button(form, text='Del', command=banco_delete,width=4, bg =colorb)
     btn_delete.place(x=840,y=430)
 
 
-    ############ BOTÃO OBTER ############
-    btn_edit = Button(form, text='Editar', command=edit)
+    ############ BOTÃO EDITAR ############
+    btn_edit = Button(form, text='Editar', command=edit, bg =colorb)
     btn_edit.place(x=100,y=327)
 
     ############ BOTÃO REFRESH ############
-    btn_refresh = Button(form, text='Atualizar', command=banco_fill)
-    btn_refresh.place(x=846,y=327)
+    btn_refresh = Button(form, text='Atualizar', command=banco_fill, bg =colorb)
+    btn_refresh.place(x=847,y=327)
 
     ############ BOTÃO DESCRIÇÃO ############
-    btn_description = Button(form, text='Descrição', command=description)
+    btn_description = Button(form, text='Descrição', command=description, bg =colorb)
     btn_description.place(x=141,y=327)
 
     ############ BOTÃO INFORMAÇÃO ############
-    btn_description = Button(form, text='Info', command=info)
+    btn_description = Button(form, text='Info', command=info, bg =colorb)
     btn_description.place(x=203,y=327)
 
     form.mainloop()
