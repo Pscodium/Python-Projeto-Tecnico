@@ -1,7 +1,10 @@
 import tkinter as tk
 from tkinter import *
 from service import services
-from service import colorb
+from register import register
+import users_db
+from tkinter import messagebox
+
 
 
 color1 = '#ffffff' #branco
@@ -20,18 +23,33 @@ window.configure(bg=color1)
 window.resizable(False, False) 
 
 
+def enter():
+    window.destroy()
+    services()
+
+
 ############ QUANDO VOCÊ ESCREVER O USER E SENHA CORRETOS, ESTA FUNÇÃO VAI DESTRUIR A JANELA DE LOGIN E ABRIR A TABLE DE SERVIÇOS ############
 def login_sucess():
-    user = str(input_user.get())
-    password = str(input_password.get())
-    
-    if user.upper() == 'OSCORP' and password == 'qwe123':
-        window.destroy()
-        services()
-    else:
-        login_spam = Label(window_down_frame, text='Usuário ou senha incorretos', width=37, height=0, padx=0, pady=0, relief='flat', anchor='center', font=('Raleway 10 bold'),bg=color1, fg=color5)
-        login_spam.place(x=0, y=90)
+    try:
+        user = input_user.get()
+        password = input_password.get()
+        vquery="SELECT * FROM tb_login WHERE T_user='"+user+"' AND T_pass='"+password+"'"
+        vcon = users_db.ConnectDB()
+        login = users_db.login(vcon,vquery)
+        if login:
+            messagebox.showinfo(title="ERRO", message="Sucesso")
+            window.destroy()
+            services()
+        else:
+            messagebox.showinfo(title="ERRO", message="Usuário ou Senha incorretos")
         
+        
+    
+
+    except:
+        messagebox.showinfo(title="ERRO", message="Usuário ou Senha incorretos")
+
+
 
 
 
@@ -69,7 +87,11 @@ input_password.grid(row=2, column=2, sticky=NSEW, pady=10, padx=3)
 
 
 ############ BOTÃO DE ENTRADA ############
-result_button = Button(window_down_frame, command=login_sucess, text='Login', width=34, height=1, overrelief=SOLID, relief='raised', border=0, anchor='center', font=('Raleway 10 bold'), bg=color4, fg=color1)
+result_button = Button(window_down_frame, command=login_sucess, text='Login', width=34, height=1, overrelief=SOLID, relief='raised', border=0, anchor='center', font=('Raleway 10 bold'), bg=color4, fg=color1, cursor='hand2')
 result_button.grid(row=4, column=0, sticky=NSEW, pady=30, padx=10, columnspan=60)
+
+register_button = Button(window_down_frame, command=register, text='Crie uma conta', activebackground=color2, width=24, height=1, overrelief=SOLID, relief='raised', border=0, anchor='center', font=('Raleway 8 bold'), bg=color2, fg=color1, cursor='hand2')
+register_button.place(x=20,y=74)
+
 
 window.mainloop()

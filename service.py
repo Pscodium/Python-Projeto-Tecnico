@@ -4,7 +4,7 @@ from tkinter import ttk
 from tkinter import messagebox
 import users_db
 import send_email
-from sqlite3 import Error
+
 
 ############ CORES ############
 color1 = '#ffffff' #branco 
@@ -13,7 +13,7 @@ color3 = '#cecece' #cinza claro para text box
 color4 = '#575757' #cinza
 colorb = '#feb236'  #amarelo Buttons
 colorfundo = '#6b5b95' #Roxo fundo
-colorentry = '#dbdad5'
+colorentry = '#dbdad5' 
 fgtext= 'White'
 colortable = '#E6E6FA'
 
@@ -169,15 +169,15 @@ def services():
 
     ############ DELETANDO NO DB E NA TABELA ############
     def banco_delete():
-        itemSelection = app.selection()[0]
-        valores=app.item(itemSelection, "values")
-        id=valores[0]
-        vcon = users_db.ConnectDB()
         try:
+            itemSelection = app.selection()[0]
+            valores=app.item(itemSelection, "values")
+            id=valores[0]
+            vcon = users_db.ConnectDB()
             vquery="DELETE FROM tb_users WHERE N_OS="+id
             users_db.delete(vcon,vquery)
         except:
-            messagebox.showinfo(title='ERRO', message="Erro ao deletar")
+            messagebox.showinfo(title='ERRO', message="Selecione um serviço")
             return
         app.delete(itemSelection)
 
@@ -247,28 +247,28 @@ def services():
 
 
     ############ BOTÃO INSERIR ############
-    btn_insert = Button(form, text='Add', command=insert,width=4, bg =colorb)
+    btn_insert = Button(form, text='Add', command=insert,width=4, bg=colorb, cursor='hand2')
     btn_insert.place(x=800,y=430)
 
     ############ BOTÃO DELETE ############
-    btn_delete = Button(form, text='Del', command=banco_delete,width=4, bg =colorb)
+    btn_delete = Button(form, text='Del', command=banco_delete,width=4, bg=colorb, cursor='hand2')
     btn_delete.place(x=840,y=430)
 
 
     ############ BOTÃO EDITAR ############
-    btn_edit = Button(form, text='Editar', command=edit, bg =colorb)
+    btn_edit = Button(form, text='Editar', command=edit, bg=colorb, cursor='hand2')
     btn_edit.place(x=100,y=327)
 
     ############ BOTÃO REFRESH ############
-    btn_refresh = Button(form, text='Atualizar', command=banco_fill, bg =colorb)
+    btn_refresh = Button(form, text='Atualizar', command=banco_fill, bg=colorb, cursor='hand2')
     btn_refresh.place(x=847,y=327)
 
     ############ BOTÃO DESCRIÇÃO ############
-    btn_description = Button(form, text='Descrição', command=description, bg =colorb)
+    btn_description = Button(form, text='Descrição', command=description, bg=colorb, cursor='hand2')
     btn_description.place(x=141,y=327)
 
     ############ BOTÃO INFORMAÇÃO ############
-    btn_description = Button(form, text='Info', command=info, bg =colorb)
+    btn_description = Button(form, text='Info', command=info, bg=colorb, cursor='hand2')
     btn_description.place(x=203,y=327)
 
     form.mainloop()

@@ -1,6 +1,9 @@
 
 import sqlite3
 from sqlite3 import Error
+from tkinter import messagebox
+
+
 
 ############ FUNÇÃO QUE FAZ A CONEXÃO COM O BANCO DE DADOS ############
 def ConnectDB():
@@ -51,3 +54,15 @@ def delete(connection, sql):
         print('Registro Removido com SUCESSO')
     except Error as ex:
         print(ex)
+
+def login(connection, sql):
+    try:
+        c= connection.cursor()
+        c.execute(sql)
+        connection.commit()
+        res=c.fetchone()
+        vcon.close()
+        print('Procurando usuários')
+    except Error as ex:
+        print(ex)
+    return res
