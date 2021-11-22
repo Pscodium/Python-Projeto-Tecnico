@@ -4,6 +4,7 @@ from tkinter import ttk
 from tkinter import messagebox
 import users_db
 import send_email
+from datetime import datetime
 
 
 ############ CORES ############
@@ -29,8 +30,24 @@ def services():
     form.geometry('1000x600')
     form.configure(bg=colorfundo)
     form.resizable(False, False) 
-  
+    
+    ############ FUNÇÃO RELÓGIO CRONOMETRADO ############ 
+    def clock():
 
+        time = datetime.now()
+
+        hour=time.strftime('%H:%M:%S')
+        timer.config(text=hour)
+        timer.after(200, clock)
+        
+    
+    def date():
+        time = datetime.now()
+
+        year = str(time.day)+'/'+str(time.month)+'/'+str(time.year)
+        calendar.config(text=year)
+    
+    ############ FUNÇÃO PARA VISUALIZAR INFORMAÇÕES SOBRE SERVIÇO SELECIONADO ############
     def info():
         try:
             itemSelection = app.selection()[0]
@@ -190,11 +207,11 @@ def services():
         mail = vmail.get()
         status = vstatus.get()
         vsql =   "INSERT INTO tb_users (N_OS, T_A_USERNAME, T_B_USERSTATUS, T_C_USEREMAIL) VALUES('"+iD+"','"+name+"','"+status+"','"+mail+"')"
+        query = "INSERT INTO tb_hist (N_OS, T_CLIENT) VALUES('"+iD+"','"+name+"')"
         vcon = users_db.ConnectDB()
         users_db.insert(vcon, vsql)
-        send_email.email_send(iD, name, status, mail)############ ENVIA AS VARIÁVEIS AO SEND_EMAIL QUE ENVIA O EMAIL PARA O CLIENTE
-
-    
+        users_db.hist(vcon, query)
+        #send_email.email_send(iD, name, status, mail)############ ENVIA AS VARIÁVEIS AO SEND_EMAIL QUE ENVIA O EMAIL PARA O CLIENTE
 
 
         
@@ -213,6 +230,14 @@ def services():
     app.heading('desc', text='DESCRIÇÃO')
     app.place(x=100,y=100)
     banco_fill()
+
+    ############ LABEL DO RELÓGIO ############ 
+    timer = Label(form, text='', font=("Raleway 11 bold"), fg=color1, bg=colorfundo)
+    timer.place(x=925, y=570)
+
+    ############ LABEL DO CALENDÁRIO ############ 
+    calendar = Label(form, text='', font=("Raleway 11 bold"), fg=color1, bg=colorfundo)
+    calendar.place(x=847, y=570)
 
 
     ############ TEXTO E ENTRADA DA ORDEM DE SERVIÇO ############
@@ -271,5 +296,10 @@ def services():
     btn_description = Button(form, text='Info', command=info, bg=colorb, cursor='hand2')
     btn_description.place(x=203,y=327)
 
+    
+
+    date()
+    clock()
     form.mainloop()
+
 

@@ -7,6 +7,8 @@ from tkinter import messagebox
 
 
 
+
+
 color1 = '#ffffff' #branco
 color2 = '#6b5b95' #Roxo fundo
 color4 = '#feb236' #amarelo Buttons
@@ -23,10 +25,6 @@ window.configure(bg=color1)
 window.resizable(False, False) 
 
 
-def enter():
-    window.destroy()
-    services()
-
 
 ############ QUANDO VOCÊ ESCREVER O USER E SENHA CORRETOS, ESTA FUNÇÃO VAI DESTRUIR A JANELA DE LOGIN E ABRIR A TABLE DE SERVIÇOS ############
 def login_sucess():
@@ -37,7 +35,7 @@ def login_sucess():
         vcon = users_db.ConnectDB()
         login = users_db.login(vcon,vquery)
         if login:
-            messagebox.showinfo(title="ERRO", message="Sucesso")
+            #messagebox.showinfo(title="ERRO", message="Sucesso")
             window.destroy()
             services()
         else:
