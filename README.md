@@ -7,6 +7,12 @@
 <p align="center">👥Nome alunos: Matheus Graciki, Peterson Larson, Lucas Baruca👥</p>
 
 
+<h1 align="center">
+    <a href="https://pt-br.reactjs.org/">🔗 React</a>
+</h1>
+<p align="center">🚀 lib para construir interfaces do usuário com componentes reutilizáveis</p>
+
+
 Tema do software.
 Nosso software é criado especificamente para empresas de ferramentaria, auxiliando na comunicação entre empresa e cliente.
 
