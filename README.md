@@ -7,8 +7,8 @@
 <p align="center">👥Nome alunos: Matheus Graciki, Peterson Larson, Lucas Baruca👥</p>
 
 
-<h2 align="center">Tema do software</h2>.
-Nosso software é criado especificamente para empresas de ferramentaria, auxiliando na comunicação entre empresa e cliente.
+<h2 align="center">Tema do software</h2>
+<p align="center">Nosso software é criado especificamente para empresas de ferramentaria, auxiliando na comunicação entre empresa e cliente.</p>
 
 Sobre a demanda do mercado.
 Atualmente o mercado está em alta, como exemplo, a empresa Tupy que é uma das maiores empresas do brasil em prestação de serviços na área de ferramentaria e metalúrgica.   
