@@ -1,9 +1,9 @@
 # SkyBlue Gerenciador de Serviços
 
 
-🌏Nome da empresa: Sky Blue
-Trabalho de aprendizagem 
-Nome alunos: Matheus Graciki, Peterson Larson, Lucas Baruca
+🌍Nome da empresa: Sky Blue🌍
+🚀Trabalho de aprendizagem🚀 
+👥Nome alunos: Matheus Graciki, Peterson Larson, Lucas Baruca👥
 
 Tema do software.
 Nosso software é criado especificamente para empresas de ferramentaria, auxiliando na comunicação entre empresa e cliente.
