@@ -6,7 +6,7 @@
 <p align="center">🚀Trabalho de aprendizagem🚀</p>
 <p align="center">👥Nome alunos: Matheus Graciki, Peterson Larson, Lucas Baruca👥</p>
 
-<img src="https://imgur.com/a/TWUdrl8"/>
+<img src="https://i.imgur.com/0GJwbkm.png"/>
 
 Tema do software.
 Nosso software é criado especificamente para empresas de ferramentaria, auxiliando na comunicação entre empresa e cliente.
