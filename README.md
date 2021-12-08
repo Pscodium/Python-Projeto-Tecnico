@@ -6,7 +6,7 @@
 <p align="center">🚀Trabalho de aprendizagem🚀</p>
 <p align="center">👥Nome alunos: Matheus Graciki, Peterson Larson, Lucas Baruca👥</p>
 
-<img src="https://img.shields.io/static/v1?label=Blog&message=Rocketseat&color=7159c1&style=for-the-badge&logo=ghost"/>
+<img src="https://imgur.com/a/TWUdrl8"/>
 
 Tema do software.
 Nosso software é criado especificamente para empresas de ferramentaria, auxiliando na comunicação entre empresa e cliente.
