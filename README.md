@@ -1,8 +1,9 @@
 # SkyBlue Gerenciador de Serviços
 
+<h1 align="center">Nome do Projeto</h1>
 
 🌍Nome da empresa: Sky Blue🌍
-🚀Trabalho de aprendizagem🚀 
+🚀Trabalho de aprendizagem🚀
 👥Nome alunos: Matheus Graciki, Peterson Larson, Lucas Baruca👥
 
 Tema do software.
