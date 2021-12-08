@@ -1,4 +1,4 @@
-# Python-Projeto-Tecnico
+# SkyBlue Gerenciador de Serviços
 
 
 O Software se trata de uma janela de login onde você pode se registrar ou realizar o login, assim que realizado o login, você entrará no programa principal, onde poderá inserir e remover informações de serviços prestados para seus clientes, quando inserido o email do cliente e adicionado o serviço à tabela, você automaticamente enviará um e-mail para o cliente informando o status de seu pedido.
