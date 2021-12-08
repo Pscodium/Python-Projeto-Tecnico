@@ -2,6 +2,8 @@
 
 <h1 align="center">SkyBlue Gerenciador de Serviços</h1>
 
+<p align="center">🌍Nome da empresa: Sky Blue🌍</p>
+
 🌍Nome da empresa: Sky Blue🌍
 🚀Trabalho de aprendizagem🚀
 👥Nome alunos: Matheus Graciki, Peterson Larson, Lucas Baruca👥
