@@ -14,8 +14,8 @@
 <h2 align="center">Sobre a demanda do mercado</h2>
 <p align="center">Atualmente o mercado está em alta, como exemplo, a empresa Tupy que é uma das maiores empresas do brasil em prestação de serviços na área de ferramentaria e metalúrgica.</p>
 
-Justificativa.
-Criamos a Sky Blue com a intenção de automatizar o processo de comunicação entre o cliente e o prestador de serviços a fim de melhorar a relação entre ambos.  
+<h2 align="center">Justificativa</h2>
+<p align="center">Criamos a Sky Blue com a intenção de automatizar o processo de comunicação entre o cliente e o prestador de serviços a fim de melhorar a relação entre ambos.</p> 
 
 Logo e divulgação da marca.
 A nossa logo é baseada em algo simples e fácil de ser lembrado, assim nossa divulgação fica objetiva e com um design limpo, nossa divulgação é feita através de websites como facebook focando nas empresas de ferramentaria. 
