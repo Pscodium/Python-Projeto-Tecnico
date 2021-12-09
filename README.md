@@ -17,15 +17,15 @@
 <h2 align="center">Justificativa</h2>
 <p align="center">Criamos a Sky Blue com a intenção de automatizar o processo de comunicação entre o cliente e o prestador de serviços a fim de melhorar a relação entre ambos.</p> 
 
-Logo e divulgação da marca.
-A nossa logo é baseada em algo simples e fácil de ser lembrado, assim nossa divulgação fica objetiva e com um design limpo, nossa divulgação é feita através de websites como facebook focando nas empresas de ferramentaria. 
+<h2 align="center">Logo e divulgação da marca</h2>
+<p align="center">A nossa logo é baseada em algo simples e fácil de ser lembrado, assim nossa divulgação fica objetiva e com um design limpo, nossa divulgação é feita através de websites como facebook focando nas empresas de ferramentaria.</p>  
 
-Pesquisa de mercado com comparações e conclusões.
-O ramo da ferramentaria sempre esteve em alta em Joinville por conta de sua demanda industrial e diversas empresas do segmento. Aqui temos algumas das ferramentarias de médio e pequeno porte em Joinville: FBM, TOPLINE, VRM, 3R e RIBEIRO.
+<h2 align="center">Pesquisa de mercado com comparações e conclusões</h2>
+<p align="center">O ramo da ferramentaria sempre esteve em alta em Joinville por conta de sua demanda industrial e diversas empresas do segmento. Aqui temos algumas das ferramentarias de médio e pequeno porte em Joinville: FBM, TOPLINE, VRM, 3R e RIBEIRO.
 
-Muitas das empresas não possuem sistemas de OS digital, então em comparação às outras empresas de prestação de serviços para softwares a Sky Blue pretende não somente melhorar o seu processo mais facilitar a comunicação com o consumidor.
+Muitas das empresas não possuem sistemas de OS digital, então em comparação às outras empresas de prestação de serviços para softwares a Sky Blue pretende não somente melhorar o seu processo mais facilitar a comunicação com o consumidor.</p>
 
-Como funciona nossa empresa.
-Sky Blue tem como principal vertente a prestação de serviços em soluções empresariais de companhias de pequeno e médio porte no ramo da ferramentaria.
+<h2 align="center">Como funciona nossa empresa</h2>
+<p align="center">Sky Blue tem como principal vertente a prestação de serviços em soluções empresariais de companhias de pequeno e médio porte no ramo da ferramentaria.
 
-Temos como ideologia, o relacionamento entre cliente e empresa, no qual desenvolvemos softwares que possibilitam essa conexão.
+Temos como ideologia, o relacionamento entre cliente e empresa, no qual desenvolvemos softwares que possibilitam essa conexão.</p>
