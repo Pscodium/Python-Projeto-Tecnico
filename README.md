@@ -23,9 +23,9 @@
 <h2 align="center">Pesquisa de mercado com comparações e conclusões</h2>
 <p align="center">O ramo da ferramentaria sempre esteve em alta em Joinville por conta de sua demanda industrial e diversas empresas do segmento. Aqui temos algumas das ferramentarias de médio e pequeno porte em Joinville: FBM, TOPLINE, VRM, 3R e RIBEIRO.
 
-Muitas das empresas não possuem sistemas de OS digital, então em comparação às outras empresas de prestação de serviços para softwares a Sky Blue pretende não somente melhorar o seu processo mais facilitar a comunicação com o consumidor.</p>
+<p align="center">Muitas das empresas não possuem sistemas de OS digital, então em comparação às outras empresas de prestação de serviços para softwares a Sky Blue pretende não somente melhorar o seu processo mais facilitar a comunicação com o consumidor.</p>
 
 <h2 align="center">Como funciona nossa empresa</h2>
 <p align="center">Sky Blue tem como principal vertente a prestação de serviços em soluções empresariais de companhias de pequeno e médio porte no ramo da ferramentaria.
 
-Temos como ideologia, o relacionamento entre cliente e empresa, no qual desenvolvemos softwares que possibilitam essa conexão.</p>
+<p align="center">Temos como ideologia, o relacionamento entre cliente e empresa, no qual desenvolvemos softwares que possibilitam essa conexão.</p>
