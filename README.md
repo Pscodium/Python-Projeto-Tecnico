@@ -4,7 +4,7 @@
 
 <p align="center">🌍Nome da empresa: Sky Blue🌍</p>
 <p align="center">🚀Trabalho de aprendizagem🚀</p>
-<p align="center">👥Nome alunos: Matheus Graciki, Peterson Larson, Lucas Baruca👥</p>
+<p align="center">👥Nome alunos: Peterson Larson, Matheus Graciki, Lucas Baruca👥</p>
 
 
 <h2 align="center">Tema do software</h2>
