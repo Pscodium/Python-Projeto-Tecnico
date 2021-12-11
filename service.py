@@ -5,6 +5,7 @@ from tkinter import messagebox
 import users_db
 import send_email
 from datetime import datetime
+from faturamento import revenues
 
 
 ############ CORES ############
@@ -93,6 +94,18 @@ def services():
 
         except:
             messagebox.showinfo(title="ERRO", message="Selecione um Serviço")
+    def fat():
+        revenues()
+
+    barrademenu = Menu(form)
+    menuGerente = Menu(barrademenu)
+    menuGerente.add_command(label='Faturamento',command=fat)
+    menuGerente.add_separator()
+    menuGerente.add_command(label='Fechar',command=form.destroy)
+    barrademenu.add_cascade(label='Menu',menu=menuGerente)
+    form.config(menu=barrademenu)
+    form.resizable(False, False)
+
 
     
     
